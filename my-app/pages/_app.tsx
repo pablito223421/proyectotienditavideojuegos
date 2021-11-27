@@ -1,5 +1,5 @@
 import "../scss/gobal.scss";
-import 'semantic-ui-css/semantic.min.css';
+import "semantic-ui-css/semantic.min.css";
 import React, { useState,useEffect,useMemo } from "react";
 import { ToastContainer } from "react-toastify";
 import { setToken, getToken,removeToken} from "../api/Token";

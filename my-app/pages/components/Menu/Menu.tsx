@@ -63,6 +63,7 @@ function MenuPlatforms(){
      <Link href="/switch">
      <Menu.Item as="a">Switch</Menu.Item>
      </Link>
+     
      </Menu>   
     );
 }
@@ -103,6 +104,7 @@ function MenuOptions(props){
          ):(
      <Menu.Item onClick={onShowModal}>
      <Icon className="user outline"/>
+     Mi cuenta
      </Menu.Item>   
          )}
     </Menu>

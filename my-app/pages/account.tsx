@@ -25,18 +25,18 @@ if(!auth && !user){
 
 return(
 <BasicLayout className="account">
-<Configuration user={user} logout={logout}/>
+<Configuration user={user} logout={logout} setRaloadUser={setReloadUser}/>
 </BasicLayout>
 );
 }
 
 function Configuration(props){
-    const {user, logout} = props;
+    const {user, logout, setReloadUser} = props;
 return(
     <div className="acount__configuration">
      <div className="title">Configuración</div>
      <div className="data">
-     <ChangeNameForm user={user} logout={logout}/>
+     <ChangeNameForm user={user} logout={logout}  setRaloadUser={setReloadUser}/>
      </div>
     </div>
 )
