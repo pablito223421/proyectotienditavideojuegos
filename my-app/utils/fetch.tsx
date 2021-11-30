@@ -1,4 +1,4 @@
-import {getToken, hasExpiredToken} from "../../api/Token";
+import {getToken, hasExpiredToken} from "../api/Token";
 
 export async function authFetch(url,params, logout) {
     

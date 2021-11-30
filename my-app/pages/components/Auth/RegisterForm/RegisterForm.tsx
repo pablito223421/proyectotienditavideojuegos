@@ -30,32 +30,40 @@ export default function RegisterForm(props) {
         name="name" 
         type="text" 
         placeholder="Nombre" 
-        onChange={formik.handleChange}/>
+        onChange={formik.handleChange}
         error={formik.errors.name}
+        />
+        
         <Form.Input
          name="lastname" 
          type="text" 
          placeholder="Apellidos" 
-         onChange={formik.handleChange}/>
+         onChange={formik.handleChange}
          error={formik.errors.lastname}
+         />
+        
         <Form.Input 
         name="username" 
         type="text" 
         placeholder="Nombre de usuario"
-        onChange={formik.handleChange}/>
+        onChange={formik.handleChange}
         error={formik.errors.username}
+        />
         <Form.Input 
         name="email" 
         type="text" 
         placeholder="Correo electrónico"
-        onChange={formik.handleChange}/>
+        onChange={formik.handleChange}
         error={formik.errors.email}
+        />
+        
         <Form.Input 
         name="password" 
         type="password" 
         placeholder="Contraseña"
-        onChange={formik.handleChange}/>
+        onChange={formik.handleChange}
         error={formik.errors.password}
+        />
       <div className="actions">
           <Button type="button" basic onClick={showLoginForm}>
               Iniciar sesión
@@ -80,10 +88,10 @@ function initialValues(){
 
 function validationSchema(){
     return {
-    name: Yup.string().required("true"),
-    lastname: Yup.string().required("true"),
-    username: Yup.string().required("true"),
-    email: Yup.string().email("true").required("true"),
-    password: Yup.string().required("true"),
+    name: Yup.string().required(),
+    lastname:Yup.string().required(),
+    username: Yup.string().required(),
+    email: Yup.string().email().required(),
+    password: Yup.string().required(),
     };
 }

@@ -1,4 +1,4 @@
-import {TOKEN} from "../pages/utils/constants";
+import {TOKEN} from "../utils/constants";
 import jwtDecode from "jwt-decode";
 
 export function setToken(token){

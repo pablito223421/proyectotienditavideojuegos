@@ -1,5 +1,5 @@
- import { BASE_PATH } from "../pages/utils/constants";
- import { authFetch } from "../pages/utils/fetch";
+ import { BASE_PATH } from "../utils/constants";
+ import { authFetch } from "../utils/fetch";
  
 export async  function registerApi(formData){
 try{
