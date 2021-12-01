@@ -266,6 +266,11 @@
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.1.0.tgz#7f698254aadf921e48dda8c0a6b304026b8a9323"
   integrity sha512-JLo+Y592QzIE+q7Dl2pMUtt4q8SKYI5jDrZxrozEQxnGVOyYE+GWK9eLkwTaeN9DDctlaRAQ3TBmzZ1qdLE30A==
 
+"@ryanar/react-auth-provider@^0.3.3":
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/@ryanar/react-auth-provider/-/react-auth-provider-0.3.3.tgz#8646f49aaf9a143a0309dabf6deda4013fc1861a"
+  integrity sha512-DihsYX46Yei0fbriFiMJ07TZtVp9kUWiuLR7KpQaKYhPVM8lHnXWwDaViP9SzltNvAujhIrhd680E5f+SZOxYw==
+
 "@semantic-ui-react/event-stack@^3.1.2":
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/@semantic-ui-react/event-stack/-/event-stack-3.1.2.tgz#14fac9796695aa3967962d94ea9733a85325f9c4"
@@ -3184,6 +3189,11 @@ raw-body@2.4.1:
     http-errors "1.7.3"
     iconv-lite "0.4.24"
     unpipe "1.0.0"
+
+react-auto-context@^0.0.9:
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/react-auto-context/-/react-auto-context-0.0.9.tgz#96c9f0b4f0b725b9b249c37b7c56539d460ba577"
+  integrity sha512-xvhcaSDQkX92s+q0WUKL/w0I7NnWEj/rgp/XXDwhZmnnshU/EXteHY2sUAdkvsd3z5QbN9LiG8KvrsIWJw09sg==
 
 react-dom@17.0.2:
   version "17.0.2"
