@@ -58,7 +58,7 @@ export default function MyApp({ Component, pageProps }) {
   return (
 
     /*AuthContext.Provider value {authData}*/
-    <AuthContext.Provider value={{authData}}>
+    <AuthContext.Provider value={authData}>
       <Component {...pageProps} />
       <ToastContainer
         position="top-right"
