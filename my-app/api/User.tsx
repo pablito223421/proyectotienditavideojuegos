@@ -3,7 +3,7 @@
  
 export async  function registerApi(formData){
 try{
-const url = `${BASE_PATH}/auth/local/register`;
+const url = `http://localhost:1337/auth/local/register`;
 const params = {
     method:"POST",
     headers:{
@@ -22,7 +22,7 @@ return null;
 
 export async function loginApi(formData){
     try {
-        const url = `${BASE_PATH}/auth/local`; 
+        const url = `http://localhost:1337/auth/local`; 
         const params= {
           method:"POST",
           headers:{
@@ -42,7 +42,7 @@ export async function loginApi(formData){
 export async function resetPasswordApi(email){
 try {
 
-const url = `${BASE_PATH}/auth/forgot-password`; 
+const url = `http://localhost:1337/auth/forgot-password`; 
 const params = {
 method: "POST",
 headers:{
@@ -54,7 +54,7 @@ const response = await fetch (url,params);
 const result = await response.json();
   return result;  
 } catch (error) {
-  console.error(null);
+  console.log(error);
   return null;  
 }
 
@@ -73,7 +73,7 @@ export async function getMeApi(logout){
 
 export async function updateNameApi(idUser, data, logout){
   try {
-    const url = `${BASE_PATH}/users/${idUser}`;
+    const url = `http://localhost:1337/users/${idUser}`;
     const params = {
       method:"PUT",
       headers:{

@@ -81,7 +81,7 @@ function initialValues(){
 
 function validationSchema(){
  return{
-     identifier :Yup.string().email().required(),
-     password: Yup.string().required(),
+     identifier :Yup.string().email().required(true),
+     password: Yup.string().required(true),
  };
 }

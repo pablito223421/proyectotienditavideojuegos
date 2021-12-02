@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "pages/_app.js", "pages/components/Account/ChangeNameForm/ChangeNameForm.js"  ],
+, "pages/_app.js", "pages/components/Account/ChangeNameForm/ChangeNameForm.js", "pages/components/Auth/LoginForm/LoginForm.js", "pages/components/Auth/RegisterForm/RegisterForm.js", "api/User.tsx"  ],
   "exclude": [
     "node_modules"
   ]
