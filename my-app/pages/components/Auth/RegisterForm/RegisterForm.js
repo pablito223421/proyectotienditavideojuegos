@@ -91,7 +91,7 @@ function validationSchema(){
     name: Yup.string().required(true),
     lastname:Yup.string().required(true),
     username: Yup.string().required(true),
-    email: Yup.string().email().required(true),
+    email: Yup.string().email(true).required(true),
     password: Yup.string().required(true),
     };
 }

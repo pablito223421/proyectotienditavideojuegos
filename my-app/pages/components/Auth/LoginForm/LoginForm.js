@@ -31,7 +31,7 @@ export default function LoginForm(props) {
     const resetPassword = () =>{
         formik.setErrors({});
 
-        const validateEmail = Yup.string().email().required();
+        const validateEmail = Yup.string().email(true).required(true);
       
         if(!validateEmail.isValidSync(formik.values.identifier)){
             formik.setErrors({ identifier:"true"});
