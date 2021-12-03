@@ -89,7 +89,7 @@ function MenuOptions(props){
              <Link href="/account">
              <Menu.Item as="a">
                 <Icon name="user outline"/>
-                {user.name} {user.lastname}
+                Usuario-Conectado/a
              </Menu.Item>
              </Link>
              <Link href="/cart">
