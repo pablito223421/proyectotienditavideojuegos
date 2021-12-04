@@ -5,6 +5,7 @@ import useAuth from "../pages/hooks/userAuth";
 import {getMeApi} from "../api/User";
 import ChangeNameForm from "../pages/components/Account/ChangeNameForm/ChangeNameForm";
 import ChangeEmailForm from "../pages/components/Account/ChangeEmailForm/ChangesEmailForm";
+import ChangePasswordForm from "../pages/components/Account/ChangePasswordForm/ChangePasswordForm";
 
 
 export default function Account (){
@@ -42,9 +43,9 @@ return(
      <ChangeEmailForm 
      user={user}
      logout={logout}
-     setReloadUser={setReloadUser}
+     setReloadUser={setReloadUser}/>
+     <ChangePasswordForm user={user} logout={logout} />
 
-     />
      </div>
     </div>
 )
