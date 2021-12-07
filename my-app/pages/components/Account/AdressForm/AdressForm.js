@@ -3,22 +3,25 @@ import  {Form , Button} from "semantic-ui-react";
 import  {useFormik} from "formik";
 import * as Yup from "yup";
 import useAuth from "../../../hooks/userAuth";
-import {createAddressApi} from "../../../../api/Address";
+import {createAddressApi,updateAddressApi} from "../../../../api/Address";
+import { toast } from "react-toastify";
 
 export default function AdressForm(props) {
-const {setShowModal}=props;
+const {setShowModal,setReloadAddresses,newAddress,address}=props;
 const [loading,setLoading]= useState(false);
 const {auth,logout} = useAuth();
 
   const formik = useFormik({
-    initialValues: initialValues(),
+    initialValues: initialValues(address),
     validationSchema:Yup.object(validationSchema()),
     onSubmit: (formData)=> {
-      createAddress(formData);
+     newAddress ? createAddress(formData):updateAddress(formData);
     },
   });
 
   const createAddress = async (formData)=>{
+   
+    
     setLoading(true);
    const formDataTemp ={
     ... FormData,
@@ -30,10 +33,29 @@ const {auth,logout} = useAuth();
      setLoading(false);
    }else{
      formik.resetForm();
+     setReloadAddresses(true);
      setLoading(false);
      setShowModal(false);
    }
   };
+
+const updateAddress=(formData)=>{
+setLoading(true);
+const formDataTemp={
+...FormData,
+user:auth.idUser,
+};
+const response= updateAddressApi(address._id,formDataTemp,logout);
+if(!response){
+  toast.warning("Error en actualizar la dirección");
+  setLoading(false);
+}else{
+  formik.resetForm();
+  setReloadAddresses(true);
+  setLoading(false);
+  setShowModal(false);
+}
+};
     return (
     <Form onSubmit={formik.handleSubmit}>
       <Form.Input 
@@ -109,7 +131,7 @@ const {auth,logout} = useAuth();
       />
       <div className="actions">
         <Button className="submit" type="submit" loading = {loading}>
-          Crear dirección
+          {newAddress ? "Crear dirección" : "Actualizar dirección" }
         </Button>
       </div>
     </Form.Group>
@@ -117,15 +139,15 @@ const {auth,logout} = useAuth();
     );
 }
 
-function initialValues(){
+function initialValues(address){
   return{
-   title:"",
-   name:"",
-   address:"",
-   city:"",
-   state:"",
-   postalCode:"",
-   phone:"",
+   title:address?.title || "",
+   name:address?.name || "",
+   address:address?.address || "",
+   city:address?.city || "",
+   state:address?.state || "",
+   postalCode:address?.postalCode || "",
+   phone:address?.phone || "",
   };
 }
 
