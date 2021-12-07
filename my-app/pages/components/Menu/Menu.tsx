@@ -89,7 +89,7 @@ function MenuOptions(props){
              <Link href="/account">
              <Menu.Item as="a">
                 <Icon name="user outline"/>
-                Usuario-Conectado/a
+                {user.name}{user.lastname}
              </Menu.Item>
              </Link>
              <Link href="/cart">
@@ -104,7 +104,6 @@ function MenuOptions(props){
          ):(
      <Menu.Item onClick={onShowModal}>
      <Icon className="user outline"/>
-     Mi cuenta
      </Menu.Item>   
          )}
     </Menu>

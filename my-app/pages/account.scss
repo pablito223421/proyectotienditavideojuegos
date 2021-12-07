@@ -1,9 +1,10 @@
 .account{
 
-    &__configuration{
+    &__configuration,
+    &__addresses{
         position: relative;
         padding: 10 px;
-    }
+    
       
         .title{
            width:max-content;
@@ -17,5 +18,16 @@
             background-color: $background-light;
             box-shadow: 1px 1px 2px 0  rbga(0,0,0,0.1);
         }
+    }
+
+&__addresses{
+    .title{
+        i{
+            position:absolute;
+            right:10px;
+            color:$font-dark;
+        }
+    }
+}
     
 }
