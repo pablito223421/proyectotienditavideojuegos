@@ -19,7 +19,7 @@ export default function ChangeNameForm(props) {
                     console.log("Error en actualizar nombres y apellidos");
                   }else{
                       setReloadUser(true);
-                      console.log("Nombre Actualizado");
+                      toast.success("Nombres y apellidos acualizados");
                   }
                   setLoading(false);
         }
@@ -57,7 +57,7 @@ return {
 
 function validationSchema(){
     return{
-        name: Yup.string().required("true"),
-        lastname:Yup.string().required("true"),
+        name: Yup.string().required(true),
+        lastname:Yup.string().required(true),
     };
 }

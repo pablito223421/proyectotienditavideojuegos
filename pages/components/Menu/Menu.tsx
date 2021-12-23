@@ -1,13 +1,15 @@
 import React, { useState , useEffect } from "react";
-import {Container, Grid,Label,Menu,Icon} from "semantic-ui-react";
+import {Container, Grid,Menu,Icon} from "semantic-ui-react";
+import {map} from "lodash";
 import Link from "next/link";
 import BasicModal from "../Modal/BasicModal/BasicModal";
 import Auth from "../Auth/Auth";
 import useAuth from "../../hooks/userAuth";
 import {getMeApi} from "../../../api/User";
+import {getPlatformsApi} from "../../../api/Platform";
 
 export default function MenuWeb(){
-  
+const [platforms, setPlatforms] = useState([]);
 const [showModal, setShowModal] = useState(false);
 const [titleModal, setTitleModal] = useState("Iniciar Sesión");
 const [user, setUser] = useState(undefined);
@@ -19,7 +21,14 @@ useEffect(() => {
      setUser (response);
    })();
     
-}, [auth, logout]);
+}, [auth]);
+
+useEffect(() => {
+    (async()=>{
+        const response = await getPlatformsApi();
+        setPlatforms(response || []);
+    })();
+}, []);
 
 const onShowModal = () =>setShowModal(true);
 const onCloseModal = () =>setShowModal(false);
@@ -29,7 +38,7 @@ const onCloseModal = () =>setShowModal(false);
         <Container>
         <Grid>
         <Grid.Column className="menu__left" width={6}>
-        <MenuPlatforms/>
+        <MenuPlatforms platforms={platforms}/>
         </Grid.Column>
         <Grid.Column className="menu__right" width={10}>
             {user!== undefined && 
@@ -51,18 +60,18 @@ const onCloseModal = () =>setShowModal(false);
    ); 
 }
 
-function MenuPlatforms(){
+function MenuPlatforms(props){
+    const {platforms} = props;
     return(
      <Menu>
-     <Link href="/play-station">
-     <Menu.Item as="a">Playstation</Menu.Item>
-     </Link>
-     <Link href="/xbox">
-     <Menu.Item as="a">Xbox</Menu.Item>
-     </Link>
-     <Link href="/switch">
-     <Menu.Item as="a">Switch</Menu.Item>
-     </Link>
+    {map (platforms,(platform)=>(
+        <Link href={`/games/${platform.url}`} key={platform._id}>
+        <Menu.Item as="a" name={platform.url}>
+            {platform.title}
+        </Menu.Item>
+        </Link>
+
+    ))}
      
      </Menu>   
     );
@@ -89,7 +98,7 @@ function MenuOptions(props){
              <Link href="/account">
              <Menu.Item as="a">
                 <Icon name="user outline"/>
-                {user.name} {user.lastname}
+                {user.name}{user.lastname}
              </Menu.Item>
              </Link>
              <Link href="/cart">
@@ -104,7 +113,6 @@ function MenuOptions(props){
          ):(
      <Menu.Item onClick={onShowModal}>
      <Icon className="user outline"/>
-     Mi cuenta
      </Menu.Item>   
          )}
     </Menu>

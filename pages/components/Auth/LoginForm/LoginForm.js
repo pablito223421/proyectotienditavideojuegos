@@ -31,7 +31,7 @@ export default function LoginForm(props) {
     const resetPassword = () =>{
         formik.setErrors({});
 
-        const validateEmail = Yup.string().email().required();
+        const validateEmail = Yup.string().email(true).required(true);
       
         if(!validateEmail.isValidSync(formik.values.identifier)){
             formik.setErrors({ identifier:"true"});
@@ -81,7 +81,7 @@ function initialValues(){
 
 function validationSchema(){
  return{
-     identifier :Yup.string().email().required(),
-     password: Yup.string().required(),
+     identifier :Yup.string().email(true).required(true),
+     password: Yup.string().required(true),
  };
 }

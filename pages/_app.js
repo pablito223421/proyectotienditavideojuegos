@@ -1,11 +1,14 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import "../scss/gobal.scss";
 import "semantic-ui-css/semantic.min.css";
 import React, { useState,useEffect,useMemo } from "react";
 import { ToastContainer } from "react-toastify";
-import { setToken, getToken,removeToken} from "../api/Token";
-import AuthContext from "./context/AutoContext";
+import { setToken, getToken,removeToken} from "../api/Token.tsx";
+import AuthContext from "./context/AuthContext.tsx";
 import jwtDecode from "jwt-decode";
-import { useRouter } from "next/dist/client/router";
+import { useRouter } from "next/router";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default function MyApp({ Component, pageProps }) {
 
@@ -25,8 +28,7 @@ export default function MyApp({ Component, pageProps }) {
      }
      setReloadUser(false);
    }, [reloadUser]);
-
-
+ 
   const login = (token) =>{
     setToken(token);
     setAuth ({
@@ -41,10 +43,10 @@ export default function MyApp({ Component, pageProps }) {
       setAuth(null);
       router.push("/");
     }
-  }
+  };
 
-  const authData = useMemo(
-    () => ({
+  
+  const authData = useMemo( () => ({
         auth,
         login,
         logout,
@@ -58,7 +60,7 @@ export default function MyApp({ Component, pageProps }) {
   return (
 
     /*AuthContext.Provider value {authData}*/
-    <>
+    <AuthContext.Provider value={authData}>
       <Component {...pageProps} />
       <ToastContainer
         position="top-right"
@@ -70,10 +72,14 @@ export default function MyApp({ Component, pageProps }) {
         pauseOnFocusLoss
         draggable
         pauseOnHover />
-    </>
+    </AuthContext.Provider>
     /*AuthContext.Provider*/
   );
-}
+    }
+ 
+
+
+
 
 
 

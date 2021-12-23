@@ -1,5 +1,5 @@
 import {TOKEN} from "../utils/constants";
-import jwtDecode from "jwt-decode";
+import jwtDecodes from "jwt-decode";
 
 export function setToken(token){
     localStorage.setItem(TOKEN,token);
@@ -15,10 +15,10 @@ export function removeToken(){
 }
 
 export function hasExpiredToken(token){
-    const tokenDecode = jwtDecode(token);
-    const expireDate= tokenDecode;
+    const tokenDecode = jwtDecodes(token);
+    const expireDate= token.exp * 1000;
     const currentDate = new Date().getTime();
-    if(currentDate< expireDate){
+    if(currentDate> expireDate){
         return true;
     }
     return false;

@@ -88,10 +88,10 @@ function initialValues(){
 
 function validationSchema(){
     return {
-    name: Yup.string().required(),
-    lastname:Yup.string().required(),
-    username: Yup.string().required(),
-    email: Yup.string().email().required(),
-    password: Yup.string().required(),
+    name: Yup.string().required(true),
+    lastname:Yup.string().required(true),
+    username: Yup.string().required(true),
+    email: Yup.string().email(true).required(true),
+    password: Yup.string().required(true),
     };
 }
