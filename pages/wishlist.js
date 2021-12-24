@@ -5,6 +5,7 @@ import BasicLayout from "../pages/layouts/BasicLayout/BasicLayout";
 import {getFavoriteApi}from "../api/Favorite";
 import useAuth from "../pages/hooks/userAuth";
 import ListGames from "../pages/components/ListGames/ListGames";
+import useCart from "../pages/hooks/useCart";
 
 export default function wishlist(){
 
