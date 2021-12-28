@@ -10,6 +10,8 @@
 @import "../pages/games/platform.scss";
 @import "../pages/wishlist.scss";
 @import "../pages/search.scss";
+@import "../pages/cart.scss";
+
 
 //components
 @import "../pages/components/Header/Header.scss";
@@ -28,3 +30,5 @@
 @import "../pages/components/Games/TabsGame/TabsGame.scss";
 @import "../pages/components/Games/InfoGame/InfoGame.scss";
 @import "../pages/components/Games/CarouselScreenshoots/CarouselScreenshots.scss";
+@import "../pages/components/Cart/SummaryCart/SummaryCart.scss";
+@import "../pages/components/Cart/AddressShipping/AddressShiping.scss";

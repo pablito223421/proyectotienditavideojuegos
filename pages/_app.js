@@ -7,7 +7,7 @@ import { setToken, getToken,removeToken} from "../api/Token";
 import AuthContext from "./context/AuthContext";
 import CartContext from "./context/CartContext";
 import jwtDecode from "jwt-decode";
-import  {getProductsCart,addProductCart,countProductsCart} from "../api/Cart";
+import  {getProductsCart,addProductCart,countProductsCart,removeProductCart} from "../api/Cart";
 import { useRouter } from "next/router";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -62,7 +62,12 @@ const addProduct = (product)=>{
   }else{
     toast.warning("Para comprar un juego tienes que iniciar sesión");
   }
-} 
+};
+
+const removeProduct = (product) =>{
+  removeProductCart(product);
+  setReloadCart(true);
+}
 
   
   const authData = useMemo( () => ({
@@ -80,7 +85,7 @@ const addProduct = (product)=>{
     productsCart:totalProductsCart,
     addProductCart:(product)=>addProduct(product),
     getProductsCart: getProductsCart,
-    removeProductsCart: ()=>null,
+    removeProductsCart: (product)=>removeProduct(product),
     removeAllProductsCart: ()=>null,  
     }),
     [totalProductsCart]
