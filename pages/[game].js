@@ -2,8 +2,10 @@ import React, {useState,useEffect} from "react";
 import BasicLayout from "./layouts/BasicLayout/BasicLayout";
 import {useRouter} from "next/router";
 import {getGamesPlatformApi} from "../api/Game";
-import HeaderGame from "../pages/components/Games/HeaderGame/HeaderGame.tsx";
-import TabsGame from "../pages/components/Games/TabsGame/TabsGame.tsx";
+import HeaderGame from "../pages/components/Games/HeaderGame/HeaderGame";
+import TabsGame from "../pages/components/Games/TabsGame/TabsGame";
+import  Seo from "../pages/components/SEO";
+
 
 export default function Game() {
 const [game, setGame] = useState(null);
@@ -20,6 +22,7 @@ if(!game) return null;
 
     return (
         <BasicLayout className="game">
+        <Seo title={game.title}/>
          <HeaderGame game={game} /> 
          <TabsGame game={game}/>
         </BasicLayout>

@@ -5,6 +5,7 @@ import BasicLayout from "../pages/layouts/BasicLayout/BasicLayout";
 import {getOrdersApi} from "../api/Order";
 import userAuth from "./hooks/userAuth";
 import Order from "../pages/components/Orders/Order/Order";
+import Seo from "../pages/components/SEO";
 
 export default function Orders(){
 
@@ -20,6 +21,7 @@ useEffect(() => {
 
 return(
 <BasicLayout className="orders">
+<Seo title="Mis pedidos" description="Listado de todos tus pedidos"/>
 <div className="orders__blocks">
 <div className="title">Mis pedidos...</div>   
 <div className="data">

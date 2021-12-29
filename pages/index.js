@@ -4,6 +4,7 @@ import {size} from "lodash";
 import BasicLayout from  "./layouts/BasicLayout/BasicLayout";
 import {getLastNameApi} from "../api/Game";
 import ListGames from "./components/ListGames/ListGames";
+import Seo from "../pages/components/SEO";
 
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
 
   return (
     <BasicLayout className="home">
+    <Seo />
       {!games && <Loader active>Cargando Juegos</Loader>}
       {games && size(games)===0 &&(
         <div>

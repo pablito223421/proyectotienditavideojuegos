@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { size } from "lodash";
 import ListGames from "./components/ListGames";
 import { Loader } from "semantic-ui-react";
+import Seo from "../pages/components/SEO";
 
 export default function search() {
 
@@ -34,6 +35,9 @@ useEffect(() => {
 
     return (
         <BasicLayout classname="search">
+        <Seo 
+         title={`Buscando:${query.query}`}
+        />
         {!games && <Loader active>Buscando juegos</Loader>}
         {games && size(games)===0 &&(
         <div>
