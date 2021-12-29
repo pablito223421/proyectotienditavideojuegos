@@ -4,6 +4,7 @@ import {getGameByUrlApi}from "../api/Game";
 import useCart from "./hooks/useCart.tsx";
 import SummaryCart from "../pages/components/Cart/SummaryCart/SummaryCart";
 import AddressShipping from "../pages/components/Cart/AddressShipping/AddressShipping";
+import Payment from "../pages/components/Cart/Payment/Payment";
 
 export default  function cart(){
 // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -46,7 +47,8 @@ useEffect(() => {
           <SummaryCart products={productsData}
           reloadCart={reloadCart}
           setReloadCart={setReloadCart}/>
-        <AddressShipping />
-        </BasicLayout>
+        <AddressShipping  setAddress={setAddress}/>
+    {address && <Payment products={productsData} adress= {address}/>}
+</BasicLayout>
     );
 }

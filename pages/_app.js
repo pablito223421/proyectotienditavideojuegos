@@ -7,7 +7,7 @@ import { setToken, getToken,removeToken} from "../api/Token";
 import AuthContext from "./context/AuthContext";
 import CartContext from "./context/CartContext";
 import jwtDecode from "jwt-decode";
-import  {getProductsCart,addProductCart,countProductsCart,removeProductCart} from "../api/Cart";
+import  {getProductsCart,addProductCart,countProductsCart,removeProductCart,removeAllProductsCart} from "../api/Cart";
 import { useRouter } from "next/router";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -86,7 +86,7 @@ const removeProduct = (product) =>{
     addProductCart:(product)=>addProduct(product),
     getProductsCart: getProductsCart,
     removeProductsCart: (product)=>removeProduct(product),
-    removeAllProductsCart: ()=>null,  
+    removeAllProductsCart: removeAllProductsCart,  
     }),
     [totalProductsCart]
   );

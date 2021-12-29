@@ -11,6 +11,7 @@
 @import "../pages/wishlist.scss";
 @import "../pages/search.scss";
 @import "../pages/cart.scss";
+@import "../pages/orders.scss";
 
 
 //components
@@ -32,3 +33,6 @@
 @import "../pages/components/Games/CarouselScreenshoots/CarouselScreenshots.scss";
 @import "../pages/components/Cart/SummaryCart/SummaryCart.scss";
 @import "../pages/components/Cart/AddressShipping/AddressShiping.scss";
+@import "../pages/components/Cart/Payment/Payment.scss";
+@import "../pages/components/Cart/Payment/FormPayment/FormPayment.scss";
+@import "../pages/components/Orders/Order/Order.scss";
