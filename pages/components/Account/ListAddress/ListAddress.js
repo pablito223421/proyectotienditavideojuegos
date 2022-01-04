@@ -1,8 +1,8 @@
 import React , {useState,useEffect} from "react";
 import {Grid,Button} from "semantic-ui-react";
 import {size, map} from "lodash";
-import {getAddressesApi,deleteAddressApi} from "../../../../api/Address";
-import useAuth from "../../../hooks/userAuth";
+import {getAddressesApi,deleteAddressApi} from "../../../../api/Address.tsx";
+import useAuth from "../../../hooks/userAuth.tsx";
 
 export default function ListAddress(props) {
     const {reloadAddress,setReloadAddreses} = props;

@@ -3,7 +3,7 @@ import {Form, Button} from "semantic-ui-react";
 import {useFormik} from "formik";
 import * as  Yup from "yup";
 import {toast} from "react-toastify";
-import {registerApi} from  "../../../../api/User";
+import {registerApi} from  "../../../../api/User.tsx";
 
 export default function RegisterForm(props) {
     const {showLoginForm}= props;

@@ -1,11 +1,11 @@
 import React,{useState,useEffect} from "react";
 import {size,foreach} from "lodash";
 import {Loader} from "semantic-ui-react"
-import BasicLayout from "../pages/layouts/BasicLayout/BasicLayout";
-import {getFavoriteApi}from "../api/Favorite";
-import useAuth from "../pages/hooks/userAuth";
-import ListGames from "../pages/components/ListGames/ListGames";
-import useCart from "../pages/hooks/useCart";
+import BasicLayout from "../pages/layouts/BasicLayout/BasicLayout.tsx";
+import {getFavoriteApi}from "../api/Favorite.tsx";
+import useAuth from "../pages/hooks/userAuth.tsx";
+import ListGames from "../pages/components/ListGames/ListGames.tsx";
+import useCart from "../pages/hooks/useCart.tsx";
 
 export default function wishlist(){
 

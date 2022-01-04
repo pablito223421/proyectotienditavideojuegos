@@ -1,7 +1,7 @@
 import React from "react";
 import ReactPlayer from "react-player";
 import "moment/locale/es";
-import CarouselScreenshots from "../CarouselScreenshoots/CarouselScreenshots";
+import CarouselScreenshots from "../CarouselScreenshoots/CarouselScreenshots.tsx";
 
 
 export default function InfoGame(props) {

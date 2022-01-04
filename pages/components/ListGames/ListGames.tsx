@@ -47,7 +47,7 @@ return (
 <Link href={`/${game.url}`}>
 <a>
     <div className="games__game-poster">
-    <Image  src={game.poster.url} alt={game.title}/>
+    <Image  src={game.poster} alt={game.title}/>
     <div className="list-games__game-poster-info">
         {game.discount ?(
             <span className="discount">-{game.discount}%</span>

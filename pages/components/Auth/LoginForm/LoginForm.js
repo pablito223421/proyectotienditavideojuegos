@@ -3,8 +3,8 @@ import {Form, Button} from "semantic-ui-react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import {toast} from "react-toastify";
-import useAuth from "../../../hooks/userAuth";
-import { loginApi,resetPasswordApi } from "../../../../api/User";
+import useAuth from "../../../hooks/userAuth.tsx";
+import { loginApi,resetPasswordApi } from "../../../../api/User.tsx";
 
 export default function LoginForm(props) {
     const {showRegisterForm,onCloseModal}=props;

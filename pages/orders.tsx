@@ -1,4 +1,4 @@
-import React,{useState,useEffect}from "react";
+import React,{useState,useEffect} from "react";
 import {Grid} from "semantic-ui-react";
 import{map,size} from "lodash";
 import BasicLayout from "../pages/layouts/BasicLayout/BasicLayout";

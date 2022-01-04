@@ -1,13 +1,13 @@
 import React, {useState,useEffect}from "react";
-import BasicLayout from "./layouts/BasicLayout/BasicLayout";
+import BasicLayout from "./layouts/BasicLayout/BasicLayout.tsx";
 import {Icon} from "semantic-ui-react";
 import useRouter from "next-router";
-import useAuth from "./hooks/userAuth";
-import {getMeApi} from "../api/User";
+import useAuth from "./hooks/userAuth.tsx";
+import {getMeApi} from "../api/User.tsx";
 import ChangeNameForm from "./components/Account/ChangeNameForm/ChangeNameForm";
 import ChangeEmailForm from "./components/Account/ChangeEmailForm/ChangesEmailForm";
 import ChangePasswordForm from "./components/Account/ChangePasswordForm/ChangePasswordForm";
-import BasicModal from "./components/Modal/BasicModal/BasicModal";
+import BasicModal from "./components/Modal/BasicModal/BasicModal.tsx";
 import AdressForm from "./components/Account/AdressForm/AdressForm";
 import ListAddress from "./components/Account/ListAddress/ListAddress";
 

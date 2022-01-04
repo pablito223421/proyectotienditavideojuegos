@@ -3,7 +3,7 @@ import {Form,Button} from "semantic-ui-react";
 import {useFormik} from "formik";
 import *  as Yup from "yup";
 import {toast} from "react-toastify";
-import {updatePasswordApi} from "../../../../api/User";
+import {updatePasswordApi} from "../../../../api/User.tsx";
 
 export default function ChangePasswordForm(props) {
     const {user,logout}=props;

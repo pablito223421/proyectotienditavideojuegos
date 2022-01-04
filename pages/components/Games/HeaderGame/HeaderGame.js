@@ -2,8 +2,8 @@ import React, {useState,useEffect} from "react";
 import {Grid,Image,Icon,Button,GridColumn} from "semantic-ui-react";
 import {size} from "lodash";
 import classNames from "classnames";
-import {isFavoriteApi,addFavoriteApi,deleteFavoriteApi} from "../../../../api/Favorite";
-import useCart from "../../../hooks/useCart";
+import {isFavoriteApi,addFavoriteApi,deleteFavoriteApi} from "../../../../api/Favorite.tsx";
+import useCart from "../../../hooks/useCart.tsx";
 
 export default function HeaderGame(props) {
     const {game} = props;

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/link-passhref */
 import React, { useState , useEffect } from "react";
 import {Container, Grid,Menu,Icon,Label} from "semantic-ui-react";
 import {map} from "lodash";
@@ -22,7 +23,7 @@ useEffect(() => {
      setUser (response);
    })();
     
-}, [auth]);
+}, [auth, logout]);
 
 useEffect(() => {
     (async()=>{

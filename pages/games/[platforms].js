@@ -2,9 +2,9 @@ import React, {useState,useEffect} from "react";
 import BasicLayout from "../layouts/BasicLayout/BasicLayout";
 import  {Loader} from "semantic-ui-react";
 import {useRouter} from "next-router";
-import {getGamesPlatformApi,getTotalGamesPlatformApi} from "../../api/Game";
+import {getGamesPlatformApi,getTotalGamesPlatformApi} from "../../api/Game.js";
 import {size} from "lodash";
-import ListGames from "../components/ListGames/ListGames"; 
+import ListGames from "../components/ListGames/ListGames.tsx"; 
 import Pagination from "../components/Pagination/Pagination";
 
 

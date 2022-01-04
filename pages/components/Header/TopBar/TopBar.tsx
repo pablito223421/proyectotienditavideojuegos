@@ -1,7 +1,7 @@
 import {Container , Grid, Image, Input} from "semantic-ui-react";
 import Link from "next/link";
 import React,{useState,useEffect} from "react";
-import {useRouter} from "next-router";
+import {useRouter} from "next/router";
 
 export default function TopBar() {
     return (
@@ -40,7 +40,7 @@ function Search(){
         router.push(`/search?query=${searchStr}`);
         }
       setLoad(true);
-    }, [router, searchStr])
+    }, [load, router, searchStr])
 
         return <Input id="search-name" icon={{name:"search"}} value={router.query.query} onChange={(_,data)=>setSearchStr(data.value)}/>;
 }

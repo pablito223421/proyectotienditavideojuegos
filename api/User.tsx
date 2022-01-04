@@ -62,7 +62,7 @@ const result = await response.json();
 
 export async function getMeApi(logout){
   try {
-    const url = `${BASE_PATH}/users/me`;
+    const url = `http://localhost:1337/users/me`;
      const result= await authFetch(url,null,logout);
      return result ? result :null;
   } catch (error) {
@@ -73,7 +73,7 @@ export async function getMeApi(logout){
 
 export async function updateNameApi(idUser, data, logout){
   try {
-    const url = `http://localhost:1337/users/${idUser}`;
+    const url = `users/${idUser}`;
     const params = {
       method:"PUT",
       headers:{

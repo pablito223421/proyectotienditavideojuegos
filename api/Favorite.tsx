@@ -4,7 +4,7 @@ import {authFetch} from "../utils/fetch";
 
 export async function isFavoriteApi(idUser,idGame,logout){
     try {
-        const url= `${BASE_PATH}/favorites?user=${idUser}&game=${idGame}`;
+        const url= `http://localhost:1337/favorites?user=${idUser}&game=${idGame}`;
         return await authFetch(url,null,logout);
         
     } catch (error) {
@@ -19,7 +19,7 @@ try {
    if(size(dataFound)>0 || !dataFound){
        return "Este juego ya lo tienes en tu lista de favoritos";
    }else{
-       const url = `${BASE_PATH}/favorites`;
+       const url = `http://localhost:1337/favorites`;
        const params= {
            method:"POST",
            headers:{
@@ -40,7 +40,7 @@ export async function  deleteFavoriteApi(idUser,idGame,logout){
 try {
    const dataFound=  await isFavoriteApi(idUser,idGame,logout);
    if(size(dataFound)>0){
-       const url= `${BASE_PATH}/favorites/${dataFound[0]?._id}`;
+       const url= `http://localhost:1337/favorites/${dataFound[0]?._id}`;
        const params ={
          method:"DELETE",
          headers:{
@@ -60,7 +60,7 @@ try {
 
 export async function getFavoriteApi(idUser,logout){
     try {
-        const url =`${BASE_PATH}/favorites?user=${idUser}`;
+        const url =`http://localhost:1337/favorites?user=${idUser}`;
         const result= await authFetch(url,null, logout);
         return result;
     } catch (error) {

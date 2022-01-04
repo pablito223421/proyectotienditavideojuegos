@@ -3,8 +3,8 @@ import {Grid} from "semantic-ui-react";
 import {size,map} from "lodash";
 import Link from "next/link";
 import classNames from "classnames";
-import {getAddressesApi} from "../../../../api/Address";
-import useAuth from "../../../hooks/userAuth";
+import {getAddressesApi} from "../../../../api/Address.tsx";
+import useAuth from "../../../hooks/userAuth.tsx";
 
 
 export default function AddressShipping(props) {
@@ -18,7 +18,7 @@ useEffect(() => {
    const response = await getAddressesApi(auth.idUser,logout);
    setAddresses(response || []);
   })()
-}, [])
+}, [auth.idUser, logout])
 
     return (
         <div className="address-shipping">

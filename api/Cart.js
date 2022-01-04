@@ -1,8 +1,11 @@
-import {BASE_PATH,CART} from "../utils/constants";
+import {BASE_PATH,CART} from "../utils/constants.tsx";
 import {toast} from "react-toastify";
 import {size,includes,remove} from "lodash";
-export function getProductsCart(){
-    const cart = localStorage(CART);
+
+
+
+export function getProductsCart(product){
+    const cart = localStorage.setItem(CART,product);
 
 if(!cart){
  return null;
@@ -56,7 +59,7 @@ export async function paymentCartApi(token,products,idUser,address,logout){
       const addressShipping=address;
       delete addressShipping.user;
       delete addressShipping.createdAt;
-      const url= `${BASE_PATH}/orders`;
+      const url= `http://localhost:1337/orders`;
       const params={
        method:"POST",
        headers:{

@@ -1,10 +1,10 @@
 import React, {useState,useEffect} from "react";
-import BasicLayout from "./layouts/BasicLayout/BasicLayout";
+import BasicLayout from "./layouts/BasicLayout/BasicLayout.tsx";
 import {useRouter} from "next/router";
-import {getGamesPlatformApi} from "../api/Game";
-import HeaderGame from "../pages/components/Games/HeaderGame/HeaderGame";
-import TabsGame from "../pages/components/Games/TabsGame/TabsGame";
-import  Seo from "../pages/components/SEO";
+import {getGamesPlatformApi} from "../api/Game.tsx";
+import HeaderGame from "../pages/components/Games/HeaderGame/HeaderGame.tsx";
+import TabsGame from "../pages/components/Games/TabsGame/TabsGame.tsx";
+import  Seo from "../pages/components/SEO.tsx";
 
 
 export default function Game() {

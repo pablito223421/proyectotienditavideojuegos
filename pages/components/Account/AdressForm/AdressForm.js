@@ -2,8 +2,8 @@ import React, {useState} from "react";
 import  {Form , Button} from "semantic-ui-react";
 import  {useFormik} from "formik";
 import * as Yup from "yup";
-import useAuth from "../../../hooks/userAuth";
-import {createAddressApi,updateAddressApi} from "../../../../api/Address";
+import useAuth from "../../../hooks/userAuth.tsx";
+import {createAddressApi,updateAddressApi} from "../../../../api/Address.tsx";
 import { toast } from "react-toastify";
 
 export default function AdressForm(props) {

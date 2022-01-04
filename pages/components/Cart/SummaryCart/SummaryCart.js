@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import {Table,Icon,Image} from "semantic-ui-react";
 import {forEach,map} from "lodash";
-import useCart from "../../../hooks/useCart";
+import useCart from "../../../hooks/useCart.tsx";
 
 export default function SummaryCart(props) {
     const {product,reloadCart,setReloadCart} = props;
@@ -14,6 +14,7 @@ export default function SummaryCart(props) {
      price += product.price;
      setTotalPrice(price);
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [reloadCart,products]);
 
     const removeProduct = (product)=>{

@@ -3,7 +3,7 @@ import {BASE_PATH} from "../utils/constants";
 
 export async function createAddressApi(address,logout){
 try {
-    const url= `${BASE_PATH}/addresses`;
+    const url= `http://localhost:1337/addresses`;
     const params ={
     method:"POST",
     headers:{
@@ -22,7 +22,7 @@ try {
 
 export async function getAddressesApi (idUser,logout){
     try {
-        const url= `${BASE_PATH}/addresses?user=${idUser}`;
+        const url= `http://localhost:1337/addresses?user=${idUser}`;
         const result = await authFetch(url, null, logout);
         if(result.statusCode ===500) throw "Error en el servidor";
         return result; 
@@ -34,7 +34,7 @@ export async function getAddressesApi (idUser,logout){
 
 export async function deleteAddressApi(idAddress, logout){
     try {
-        const url= `${BASE_PATH}/addresses/${idAddress}`;
+        const url= `http://localhost:1337/addresses/${idAddress}`;
     const params ={
     method:"DELETE",
     headers:{
@@ -52,7 +52,7 @@ export async function deleteAddressApi(idAddress, logout){
 
 export async function updateAddressApi(idAddress,address,logout){
     try {
-        const url= `${BASE_PATH}/addresses/${idAddress}`;
+        const url= `http://localhost:1337/addresses/${idAddress}`;
         const params ={
         method:"PUT",
         headers:{

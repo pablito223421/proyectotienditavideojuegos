@@ -2,9 +2,9 @@ import React, {useState,useEffect} from "react";
 import BasicLayout from "./layouts/BasicLayout/BasicLayout";
 import {getGameByUrlApi}from "../api/Game";
 import useCart from "./hooks/useCart.tsx";
-import SummaryCart from "../pages/components/Cart/SummaryCart/SummaryCart";
-import AddressShipping from "../pages/components/Cart/AddressShipping/AddressShipping";
-import Payment from "../pages/components/Cart/Payment/Payment";
+import SummaryCart from "../pages/components/Cart/SummaryCart/SummaryCart.tsx";
+import AddressShipping from "../pages/components/Cart/AddressShipping/AddressShipping.tsx";
+import Payment from "../pages/components/Cart/Payment/Payment.tsx";
 
 export default  function cart(){
 // eslint-disable-next-line react-hooks/rules-of-hooks

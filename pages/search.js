@@ -1,11 +1,11 @@
 import React , {useState,useEffect} from "react";
-import BasicLayout from "./layouts/BasicLayout/BasicLayout";
-import { searchGamesApi } from "../api/Game";
+import BasicLayout from "./layouts/BasicLayout/BasicLayout.tsx";
+import { searchGamesApi } from "../api/Game.tsx";
 import { useRouter } from "next/router";
 import { size } from "lodash";
-import ListGames from "./components/ListGames";
+import ListGames from "./components/ListGames/ListGames.tsx";
 import { Loader } from "semantic-ui-react";
-import Seo from "../pages/components/SEO";
+import Seo from "./components/SEO.tsx";
 
 export default function search() {
 
@@ -16,7 +16,7 @@ const {query}= useRouter();
 
 // eslint-disable-next-line react-hooks/rules-of-hooks
 useEffect(() => {
-    document.getElementById("search-game").focus();
+    document.getElementById('search-game');
 }, []);
 
 // eslint-disable-next-line react-hooks/rules-of-hooks
